@@ -1,0 +1,100 @@
+{
+    "Community Chest": [
+        {
+            "text": "Advance to Go (Collect $200)",
+            "type": "ADVANCE",
+            "target": "GO",
+            "amount": null
+        },
+        {
+            "text": "Bank error in your favor. Collect $200",
+            "type": "RECEIVE",
+            "target": "BANK",
+            "amount": 200
+        },
+        {
+            "text": "From sale of stock you get $50",
+            "type": "RECEIVE",
+            "target": "BANK",
+            "amount": 50
+        },
+        {
+            "text": "Holiday fund matures. Receive $100",
+            "type": "RECEIVE",
+            "target": "BANK",
+            "amount": 100
+        },
+        {
+            "text": "Income tax refund. Collect $20",
+            "type": "RECEIVE",
+            "target": "BANK",
+            "amount": 20
+        },
+        {
+            "text": "Life insurance matures. Collect $100",
+            "type": "RECEIVE",
+            "target": "BANK",
+            "amount": 100
+        },
+        {
+            "text": "Receive $25 consultancy fee",
+            "type": "RECEIVE",
+            "target": "BANK",
+            "amount": 25
+        },
+        {
+            "text": "You have won second prize in a beauty contest. Collect $10",
+            "type": "RECEIVE",
+            "target": "BANK",
+            "amount": 10
+        },
+        {
+            "text": "You inherit $100",
+            "type": "RECEIVE",
+            "target": "BANK",
+            "amount": 100
+        },
+        {
+            "text": "It is your birthday. Collect $10 from every player",
+            "type": "RECEIVE",
+            "target": "PLAYERS",
+            "amount": 10
+        },
+        {
+            "text": "Go to Jail. Go directly to Jail, do not pass Go, do not collect $200.",
+            "type": "JAIL",
+            "target": "JAIL",
+            "amount": null
+        },
+        {
+            "text": "Get Out of Jail Free.",
+            "type": "FREE",
+            "target": null,
+            "amount": null
+        },
+        {
+            "text": "Doctor's fee. Pay $50",
+            "type": "PAY",
+            "target": "BANK",
+            "amount": 50
+        },
+        {
+            "text": "Pay hospital fees of $100",
+            "type": "PAY",
+            "target": "BANK",
+            "amount": 100
+        },
+        {
+            "text": "Pay school fees of $50",
+            "type": "PAY",
+            "target": "BANK",
+            "amount": 50
+        },
+        {
+            "text": "You are assessed for street repair. $40 per house. $115 per hotel",
+            "type": "REPAIR",
+            "target": null,
+            "amount": 115
+        }
+    ]
+}

@@ -1,0 +1,17 @@
+{
+    "Chance": [        {
+        "text": "Get Out of Jail Free.",
+        "type": "FREE",
+        "target": null,
+        "amount": null
+    }
+],
+
+    "Community Chest": [        {
+        "text": "Get Out of Jail Free.",
+        "type": "FREE",
+        "target": null,
+        "amount": null
+    }
+]
+}
