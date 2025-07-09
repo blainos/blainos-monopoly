@@ -4,7 +4,6 @@ import tkinter as tk
 from PIL import Image, ImageTk
 import time
 import emoji
-import websockets
 
 class InsufficientFunds(Exception):
     def __init__(self, message=""):
@@ -663,9 +662,8 @@ class sidebarGUI:
     Advantages to all this under one class: critical boolean can be of more use.
     For example when a space is clicked while in critical section, could have it 
     not change anything in the sidebar. Just return/pass without doing anything.'''
-    def __init__(gui, window: tk.Tk, width: int, websocket: websockets.connect):
+    def __init__(gui, window: tk.Tk, width: int):
             
-            gui.socket = websocket
             gui.window = window
             gui.space = None
             gui.critical = False
@@ -800,7 +798,7 @@ class sidebarGUI:
             
             
 
-    async def roll(self):
+    def roll(self):
         if self.critical:
             return
         self.multiplier = 1
@@ -812,7 +810,6 @@ class sidebarGUI:
         self.dice2.itemconfig(self.dice2_image, image=self.dice_images[self.dice_two-1])
 
         print(self.player.name + " rolls " + str(self.dice_one + self.dice_two))
-        await self.socket.send(self.player.name + " rolls: " + str(self.dice_one + self.dice_two))
 
         self.dice1.update()
         
@@ -834,7 +831,7 @@ class sidebarGUI:
         else:
             self.roll_button.config(state=set_state, text="DONE", command=lambda: self.done())
 
-    async def done(gui):
+    def done(gui):
         if gui.critical:
             return
         global player_list, turn_count
@@ -850,7 +847,6 @@ class sidebarGUI:
         gui.roll_button.config(text="ROLL", command=lambda:gui.roll(), state='active')
 
         print("It is " + gui.player.name + "'s turn.")
-        await gui.socket.send("It is " + gui.player.name + "'s turn.")
 
         gui.render_buttons()
 
@@ -1728,7 +1724,7 @@ class game:
         self.window = window
         self.sidebar = sidebar
 
-def main(player_list: list, websocket: websockets.connect):
+def main(player_list: list):
     with open('properties.json') as f:
         file = json.load(f)
 
@@ -1807,7 +1803,7 @@ def main(player_list: list, websocket: websockets.connect):
     main_window = tk.Tk()
     main_window.title("Monopoly")
 
-    tile_width = 60
+    tile_width = 45
     tile_height = tile_width*2
 
     spaces = []
@@ -2030,7 +2026,7 @@ def main(player_list: list, websocket: websockets.connect):
         else:
             i += 2
 
-    sidebar_gui = sidebarGUI(main_window, tile_width, websocket)
+    sidebar_gui = sidebarGUI(main_window, tile_width)
     #roll_button.bind("<ButtonRelease-1>", lambda event: dice_gui.toss())
     #roll_button.invoke()
 
