@@ -10,3 +10,8 @@ This Monopoly application enables local, hot-seat play between four players (cur
 Roll dice, buy properties, draw from Community Chest and Chance, trade with players (see GIF below) and build monopolies!
 
 <img src="monopoly_trading.gif" alt="GIF of two Monopoly players trading properties" width="500"/>
+
+Buy and sell houses (see GIF below)
+
+<img src="monopoly_buying_houses.gif" alt="GIF of two Monopoly players buying houses" width="500"/>
+
